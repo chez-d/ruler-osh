@@ -1,0 +1,21 @@
+(version 1)
+# Kicad 8
+
+(rule ruler-edge-pads
+    (severity ignore)
+    (constraint edge_clearance)
+	(constraint clearance (min 0mm))
+    (condition "A.memberOf('ignore-group')")
+)
+
+(rule ignore-pixel-art
+    (severity ignore)
+    (constraint edge_clearance)
+	(constraint clearance)
+	(constraint connection_width)
+	(constraint physical_clearance)
+	(constraint text_height)
+	(constraint text_thickness)
+	(constraint silk_clearance)
+    (condition "A.memberOf('avoid')")
+)
